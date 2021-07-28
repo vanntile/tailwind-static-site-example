@@ -1,0 +1,24 @@
+{
+  "name": "tailwind-static-site-example",
+  "version": "0.1.0",
+  "description": "Example of a static website with dynamically compiled TailwindCSS using PostCSS",
+  "main": "index.js",
+  "scripts": {
+    "postcss:watch": "postcss assets/index.pcss -o assets/index.css --env development -w",
+    "server:watch": "live-server .",
+    "clean": "rm -rf dist .cache",
+    "start": "npm-run-all -s clean -p postcss:watch server:watch",
+    "build": "postcss assets/index.pcss -o assets/index.css --env production"
+  },
+  "author": "vanntile",
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.4.1",
+    "autoprefixer": "^10.3.1",
+    "live-server": "^1.2.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.7"
+  }
+}
